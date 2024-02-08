@@ -45,6 +45,9 @@ up = Function(Z)
 u, p, rho  = split(up)
 v, q, lamda = TestFunctions(Z)
 
+def D(u):
+    return grad(u) + grad(u).T
+ 
 # known data
 u_exact = Expression(('sin(pi*x[0]-0.7)*sin(pi*x[1]+0.2)*cos(t)','cos(pi*x[0]-0.7)*cos(pi*x[1]+0.2)*cos(t)'), domain =mesh, degree =5, t=0)             
 p_exact = Expression(('cos(t)*(sin(x[0])*cos(x[1])+(cos(1)-1)*sin(1))'), domain =mesh, degree =5, t=0)         
@@ -54,17 +57,11 @@ f2= div(u_exact)
 H = dot(u_exact,n)
 ss = inner(nu*D(u_exact)*n,tau)+beta*dot(u_exact,tau)
 
-         
-def D(u):
-    return grad(u) + grad(u).T
-
 # data at previous steps   
 u_n = Function(Z.sub(0).collapse())
 u_n.interpolate(u_exact)
 p_n = Function(Z.sub(1).collapse())
 p_n.interpolate(p_exact)
-
-
 
 XI_X = JacobianInverse(mesh)
 G = XI_X.T * XI_X  # Metric tensor
