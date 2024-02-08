@@ -26,8 +26,12 @@ T = 1
 nx=  128
 num_steps = 4
 dt = T/num_steps
+idt = Constant(1/dt)
 
 mesh = UnitSquareMesh(nx,nx)
+n = FacetNormal(mesh)
+tau = as_vector((-n[1], n[0])) 
+h = mesh.hmin()
 
 # Function Spaces
 V = VectorElement("CG", mesh.ufl_cell(), 1)
@@ -61,10 +65,6 @@ p_n = Function(Z.sub(1).collapse())
 p_n.interpolate(p_exact)
 
 
-n=  FacetNormal(mesh)
-tau = as_vector((-n[1], n[0])) 
-h = mesh.hmin()
-idt = Constant(1/dt)
 
 XI_X = JacobianInverse(mesh)
 G = XI_X.T * XI_X  # Metric tensor
