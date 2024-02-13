@@ -20,7 +20,7 @@ Three tests are conducted in this work:
 2. **Test 2: Lid Driven Cavity Test**
    - Scripts: `lid_driven_steady_noslip.py`, `lid_driven_steady_slip.py`, `lid_driven_unsteady_noslip.py`, and `lid_driven_unsteady_slip.py`
 
-3. **Test 3: Flow Past a Circular Cylinder**
+3. **Test 3: Flow Past through a Circular Cylinder**
    - Scripts: `flow_past_cylinder_noslip.py` and `flow_past_cylinder_slip.py`
 
 ## **Dependencies**
