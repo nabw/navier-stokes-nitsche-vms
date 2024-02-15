@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 set_log_level(LogLevel.ERROR)
 
 # parameters
-nu = Constant(0.001)
+nu = Constant(0.000003517)
 beta=Constant(1)
 gamma=Constant(10)
 
