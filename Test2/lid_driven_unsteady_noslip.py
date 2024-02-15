@@ -68,12 +68,7 @@ p_n.interpolate(p_in)
 
 #parameters
 nu = Constant(1/5000)
-beta=Constant(1)
-gamma=Constant(10)
-
-idt = Constant(1/dt)
-n=  FacetNormal(mesh)
-tau = as_vector((-n[1], n[0])) 
+idt = Constant(1/dt) 
 
 XI_X = JacobianInverse(mesh)
 G = XI_X.T * XI_X  # Metric tensor
