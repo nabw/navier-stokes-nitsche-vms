@@ -55,8 +55,6 @@ f = Constant((0,0))
 
 # parameters
 nu = Constant(1/500)
-beta=1
-gamma=10
 
 def D(u):
     return grad(u) + grad(u).T
