@@ -61,8 +61,8 @@ u, p, rho  = split(up)
 v, q, lamda = TestFunctions(Z)
 
 # parameters
-nu = Constant(1/1000)
-beta=1
+nu = Constant(0.000099)
+beta=0
 gamma = 10
 idt = Constant(1/dt)
 h  = mesh.hmin()
