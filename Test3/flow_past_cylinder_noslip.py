@@ -57,8 +57,8 @@ v, q, lamda = TestFunctions(Z)
 
 # parameters
 h  = mesh.hmin()
-nu = Constant(1/1000)
-beta=1
+nu = Constant(0.000099)
+beta=0
 gamma = 10
 idt = Constant(1/dt)
 
